@@ -1,0 +1,19 @@
+<ul class="list-unstyled">
+  <li *ngFor="let item of items$ | async"
+      class="book in-library">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <span class="title">{{ item.title }}</span>
+      </div>
+      <div class="panel-body">
+        {{ item.summary }}
+      </div>
+      <div class="panel-footer">
+        <button *ngIf="item.status === 'in-library'"
+                class="btn btn-xs btn-primary">Loan This Out</button>
+        <button *ngIf="item.status === 'loaned'"
+                class="btn btn-xs btn-info">This {{ item.type }} loaned out to {{ item.onloan }}. Mark it returned.</button>
+      </div>
+    </div>
+  </li>
+</ul>

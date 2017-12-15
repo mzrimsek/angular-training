@@ -1,0 +1,9 @@
+<ul class="list-unstyled">
+  <li *ngFor="let product of products"
+      class="alert alert-info">
+    {{ product.description }} for {{ product.price | currency }}
+    <button [disabled]="!product.instock"
+            class="btn btn-xs btn-primary"
+            (click)="addToCart(product)">Add To Cart</button>
+  </li>
+</ul>

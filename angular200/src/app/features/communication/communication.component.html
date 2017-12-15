@@ -1,0 +1,15 @@
+<app-communication-message></app-communication-message>
+<app-communication-message></app-communication-message>
+
+<section class="col-sm-3">
+  <app-communication-list caption="Your List"
+                          [items]="items"
+                          (completed)="onItemCompleted($event)"
+                          (selected)="onItemSelected($event)"></app-communication-list>
+</section>
+
+<section class="col-sm-9">
+  <app-communication-data-entry (added)="onItemAdded($event)"></app-communication-data-entry>
+  <app-communication-details *ngIf="selectedItem"
+                             [item]="selectedItem"></app-communication-details>
+</section>

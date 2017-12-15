@@ -1,0 +1,4 @@
+<app-game-guess-entry [secret]="secretNumber$ | async"
+                      [disabled]="(currentGuess$ | async) === null || (gameOver$ | async)"></app-game-guess-entry>
+<app-game-guess-result [status]="gameStatus$ | async"
+                       [gameOver]="gameOver$ | async"></app-game-guess-result>

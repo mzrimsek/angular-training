@@ -1,0 +1,19 @@
+<div class="sort-and-filter">
+  <button class="btn btn-primary"
+          [disabled]="filterBy === 'all'"
+          (click)="filterByAll()">All
+    <span class="badge">{{summary.totalMovies}}</span>
+  </button>
+
+  <button class="btn btn-primary"
+          [disabled]="filterBy === 'purchased'"
+          (click)="filterByPurchased()">Purchased
+    <span class="badge">{{summary.totalPurchased}}</span>
+  </button>
+
+  <button class="btn btn-primary"
+          [disabled]="filterBy === 'unpurchased'"
+          (click)="filterByUnpurchased()">Not Purchased
+    <span class="badge">{{summary.totalUnpurchased}}</span>
+  </button>
+</div>

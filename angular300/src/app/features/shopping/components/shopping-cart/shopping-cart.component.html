@@ -1,0 +1,14 @@
+<div class="alert alert-warning"
+     *ngIf="cartItems.length === 0">No items in your shopping cart!</div>
+
+<ul *ngIf="cartItems"
+    class="list-unstyled">
+  <li *ngFor="let item of cartItems"
+      class="alert alert-info">
+    {{ item.quantity}} {{ item.description }} for {{ item.price | currency }} ({{ item.total | currency }} Total)
+    <input type='button'
+           class='btn btn-xs btn-danger'
+           value='Remove From Cart'
+           (click)="removeFromCart(item)" />
+  </li>
+</ul>

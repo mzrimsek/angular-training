@@ -1,0 +1,12 @@
+<div *ngIf="status === 'high' || status === 'low'"
+     class="alert alert-danger">
+  Too {{status}}!!
+</div>
+<div *ngIf="status === 'correct'"
+     class="alert alert-success">
+  You win!!
+</div>
+<div *ngIf="gameOver">
+  <button class="btn btn-primary"
+          (click)="resetGame()">Play Again?</button>
+</div>

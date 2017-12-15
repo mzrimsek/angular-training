@@ -1,0 +1,29 @@
+<div class="counter-container">
+
+  <div class="update-count">
+    <h5>Count By</h5>
+    <div class="buttons">
+      <button class="btn btn-primary"
+              (click)="countBy(1)">1</button>
+      <button class="btn btn-primary"
+              (click)="countBy(2)">2</button>
+      <button class="btn btn-primary"
+              (click)="countBy(3)">3</button>
+      <button class="btn btn-primary"
+              (click)="countBy(4)">4</button>
+      <button class="btn btn-primary"
+              (click)="countBy(5)">5</button>
+    </div>
+  </div>
+  <div class="counter">
+    <button class="btn btn-danger"
+            [disabled]="decrementDisabled$ | async"
+            (click)="decrement()">-</button>
+    <div>{{count$ | async}}</div>
+    <button class="btn btn-success"
+            (click)="increment()">+</button>
+  </div>
+  <button class="reset btn btn-warning"
+          [disabled]="resetDisabled$ | async"
+          (click)="reset()">Reset</button>
+</div>

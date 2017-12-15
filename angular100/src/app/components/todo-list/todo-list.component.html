@@ -1,0 +1,16 @@
+<div class="item-input">
+  <input type="text"
+         #itemToAdd />
+  <input type="button"
+         value="Add Item"
+         (click)="add(itemToAdd)" />
+</div>
+<div class="item-list">
+  <ul>
+    <li *ngFor="let item of items"
+        [ngClass]="{completed: item.completed}"
+        (click)="toggleCompleted(item)">
+      {{item.description}}
+    </li>
+  </ul>
+</div>

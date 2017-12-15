@@ -1,0 +1,10 @@
+<ul class="list-unstyled">
+  <li *ngFor="let gift of gifts"
+      class="alert alert-info">
+    <h3>Buy {{gift.recipient}} {{gift.description}}</h3>
+    <input type="button"
+           value="Mark Purchased"
+           class="btn btn-xs btn-danger"
+           (click)="markPurchased(gift.id)" />
+  </li>
+</ul>

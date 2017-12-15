@@ -1,0 +1,14 @@
+<div class="form-group">
+  <label>Title</label>
+  <input type="text"
+         class="form-control"
+         #title />
+</div>
+<div class="form-group">
+  <label>Release Date</label>
+  <input type="text"
+         class="form-control"
+         #releaseDate />
+</div>
+<button class="btn btn-success"
+        (click)="addMovie(title, releaseDate)">Add Movie</button>

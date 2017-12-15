@@ -1,0 +1,25 @@
+<div *ngIf="(loading$ | async)"
+     class="alert alert-info">
+  <h3>Your Data is Loading...</h3>
+</div>
+<div *ngIf="!(loading$ | async)">
+  <header class="page-header">
+    <h4>Movies</h4>
+    <app-movies-summary [summary]="summary$ | async"></app-movies-summary>
+  </header>
+  <div class="col-sm-3">
+    <nav>
+      <ul class="nav nav-stacked nav-pills">
+        <li [routerLinkActive]="['active']">
+          <a [routerLink]="['list']">List</a>
+        </li>
+        <li [routerLinkActive]="['active']">
+          <a [routerLink]="['new']">New</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="col-sm-9">
+    <router-outlet></router-outlet>
+  </div>
+</div>

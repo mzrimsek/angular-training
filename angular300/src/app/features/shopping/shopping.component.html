@@ -1,0 +1,21 @@
+<header>
+  <h2>Shopping</h2>
+</header>
+<div class="alert alert-info"
+     *ngIf="!(loaded$ | async)">
+  Your data is loading...
+
+</div>
+<div *ngIf="loaded$ | async">
+  <div class="row">
+    <div class="col-sm-6">
+      <app-shopping-product-list [products]="products$ | async"></app-shopping-product-list>
+    </div>
+    <div class="col-sm-6">
+      <app-shopping-shopping-cart [cartItems]="cartItems$ | async"></app-shopping-shopping-cart>
+    </div>
+  </div>
+  <div class="row">
+    <app-shopping-summary [summary]="cartSummary$ | async"></app-shopping-summary>
+  </div>
+</div>

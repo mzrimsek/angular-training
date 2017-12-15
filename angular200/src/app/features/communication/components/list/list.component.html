@@ -1,0 +1,13 @@
+<h3>{{caption}}</h3>
+<div *ngFor="let item of items"
+     class="alert alert-info">
+  <h4>{{item.description}}</h4>
+  <div class="actions">
+    <span class="glyphicon glyphicon-plus alert alert-warning"
+          (click)="markSelected(item)"></span>
+    <span class="glyphicon glyphicon-remove alert alert-danger"
+          (click)="markCompleted(item)"></span>
+
+  </div>
+  <pre>{{item | json}}</pre>
+</div>

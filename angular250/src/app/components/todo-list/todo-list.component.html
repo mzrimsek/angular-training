@@ -1,0 +1,19 @@
+<div>
+  <input type="text"
+         data-todo-item-input
+         #item>
+  <input type='button'
+         data-todo-item-button
+         value='Add Item'
+         (click)="add(item)">
+</div>
+<ul>
+  <li *ngFor="let item of (items$ | async); let i = index"
+      [attr.data-todo-item]="i">
+    {{ item.description }}
+    <input type='button'
+           value='X'
+           (click)="markCompleted(item)"
+           [disabled]="item.completed" />
+  </li>
+</ul>

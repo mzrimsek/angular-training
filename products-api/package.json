@@ -1,0 +1,22 @@
+{
+  "name": "products-api",
+  "version": "1.0.0",
+  "description": "an api for angular 300 class",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "api",
+    "class",
+    "products"
+  ],
+  "author": "Mike Zrimsek",
+  "license": "MIT",
+  "dependencies": {
+    "hapi": "^16.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.5"
+  }
+}

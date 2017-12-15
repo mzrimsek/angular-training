@@ -1,0 +1,19 @@
+<p>
+  The Message Is: {{message}}
+</p>
+
+<input type="button"
+       value="Get Message"
+       (click)="getMessage()" />
+
+<div class="input-group">
+  <input type="text"
+         placeholder="New message"
+         class="form-control"
+         #newMessage />
+  <span class="input-group-btn">
+    <button class="btn"
+            type="button"
+            (click)="setMessage(newMessage)">Set Message</button>
+  </span>
+</div>

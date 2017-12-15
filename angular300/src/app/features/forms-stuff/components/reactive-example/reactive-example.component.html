@@ -1,0 +1,38 @@
+<form [formGroup]='loginForm'
+      (ngSubmit)='login()'>
+  <div class="form-group">
+    <label for='userName'>User Name</label>
+    <input class='form-control'
+           [formControl]='userName'
+           name='userName' />
+    <div class="alert alert-danger"
+         [hidden]='userName.valid || userName.untouched'>
+      <div [hidden]="!userName.hasError('required')">
+        This is Required
+      </div>
+      <div [hidden]="!userName.hasError('minlength')">
+        Usernames have to have at least 3 letters.
+      </div>
+      <div [hidden]="!userName.hasError('ending')">
+        Username cannot end with !
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for='password'>Password</label>
+    <input class='form-control'
+           [formControl]='password'
+           type='password'
+           name='password' />
+    <div class="alert alert-danger"
+         [hidden]='password.valid || password.untouched'>
+      <div [hidden]="!userName.hasError('ending')">
+        Password cannot end with %
+      </div>
+    </div>
+  </div>
+  <input type='submit'
+         value='Log In'
+         [disabled]='!loginForm.valid'
+         class='btn btn-primary' />
+</form>

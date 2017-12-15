@@ -1,0 +1,21 @@
+<div class="container">
+  <header class="page-header">
+    <h1>Angular 100</h1>
+    <h2>Sample Application</h2>
+    <nav>
+      <ul class="nav nav-tabs">
+        <li [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{exact:true}">
+          <a [routerLink]="['']">Todo List</a>
+        </li>
+        <li [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{exact:true}">
+          <a [routerLink]="['gifts']">Gift List</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+    <router-outlet></router-outlet>
+  </section>
+</div>
